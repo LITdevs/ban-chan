@@ -33,6 +33,7 @@ client.on("messageCreate", async (message) => {
 });
 
 async function treatUser(user, guild, type) {
+    if (strings?.WHITELIST?.includes(user.id)) return;
     const announcementChannel = client.channels.cache.get(strings.ANNOUNCEMENT_CHANNEL);
     const banningChannel = client.channels.cache.get(strings.BANNING_CHANNEL);
 
